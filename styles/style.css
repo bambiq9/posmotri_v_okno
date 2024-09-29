@@ -37,13 +37,13 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  inline-size: 1200px;
-  block-size: 100%;
   margin: auto;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  inline-size: 1200px;
+  block-size: 100%;
 }
 
 h1,
@@ -63,6 +63,10 @@ fieldset {
 ul,
 ol {
   list-style: none;
+}
+
+input {
+  appearance: none;
 }
 
 .button {
@@ -162,7 +166,7 @@ ol {
   border-block-end: 1px solid #fff;
   padding-inline: 0;
   padding-block: 2.5px;
-  color: #fff;
+  color: inherit;
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
@@ -226,8 +230,9 @@ ol {
   position: relative;
   display: flex;
   flex-direction: column;
-  overflow: scroll;
+  overflow: auto;
   block-size: 298px;
+  inline-size: 414px;
 }
 
 .content__list-item:not(:last-child) {
@@ -239,6 +244,7 @@ ol {
   margin: 2px;
   color: inherit;
   text-decoration: none;
+  inline-size: 394px;
 }
 
 .content__card-link:active,
@@ -258,6 +264,8 @@ ol {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  max-inline-size: 192px;
+  max-block-size: 103px;
 }
 
 .content__card-link:hover {
@@ -266,14 +274,19 @@ ol {
 }
 
 .content__video-card-title {
+  overflow: hidden;
   font-family: Oswald, sans-serif;
   font-size: 30px;
   line-height: 30px;
   text-transform: uppercase;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .content__video-card-description {
+  overflow: hidden;
   line-height: 16.2px;
+  max-block-size: 65px;
 }
 
 .content__video-card-description::first-letter {
