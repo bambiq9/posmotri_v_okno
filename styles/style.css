@@ -36,9 +36,8 @@ html {
 .page {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin: auto;
-  padding-inline: 30px;
-  padding-block: 133px;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
@@ -194,8 +193,6 @@ ol {
 }
 
 .search-form__pseudo-checkbox {
-  position: relative;
-  display: inline-block;
   border: 1px solid #fff;
   block-size: 19px;
   inline-size: 19px;
@@ -204,10 +201,10 @@ ol {
 .search-form__checkbox:active + .search-form__pseudo-checkbox::before,
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::before {
   content: '';
-  position: absolute;
+  display: block;
+  margin-inline-start: 1px;
+  margin-block-start: 1px;
   background-color: #fff;
-  inset-block-start: 1px;
-  inset-inline-start: 1px;
   block-size: 15px;
   inline-size: 15px;
 }
